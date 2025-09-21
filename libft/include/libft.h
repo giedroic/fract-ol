@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:52:28 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/06 20:27:26 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/21 14:35:29 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
 # include "ft_strmapi.h"
 # include "ft_striteri.h"
 # include "ft_putchar_fd.h"
+# include "ft_putstr_fd.h"
 # include "ft_putendl_fd.h"
 # include "ft_putnbr_fd.h"
 # include "t_list.h"
