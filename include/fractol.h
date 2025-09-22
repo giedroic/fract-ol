@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/22 15:13:19 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/22 15:39:19 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,12 @@ typedef struct s_fractal
 	t_data	img;
 }	t_fractal;
 
+typedef struct s_complex
+{
+	double	re;
+	double	im;
+}	t_complex;
+
 void	fractal_init(t_fractal *fractal);
+void	fractal_render(t_fractal *fractal);
 #endif
