@@ -15,6 +15,8 @@ OBJ_DIR = obj/
 
 MAIN_OBJ = obj/main.o
 
+INCLUDE = include/fractol.h
+
 .PHONY : all libft minilibx-linux clean fclean re
 
 all : libft minilibx-linux $(OBJ_DIR) $(BIN_DIR) $(NAME)
@@ -22,7 +24,7 @@ all : libft minilibx-linux $(OBJ_DIR) $(BIN_DIR) $(NAME)
 bin/main: $(MAIN_OBJ)
 	$(CC) $< $(LDFLAGS) -o $@ $(LDLIBS)
 
-obj/%.o : src/%.c
+obj/%.o : src/%.c $(INCLUDE)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 libft :
