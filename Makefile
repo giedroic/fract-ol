@@ -13,7 +13,7 @@ NAME := $(addprefix bin/,$(NAME))
 BIN_DIR = bin/
 OBJ_DIR = obj/
 
-MAIN_OBJ = obj/main.o
+MAIN_OBJ = obj/main.o obj/fractal_init.o
 
 INCLUDE = include/fractol.h
 

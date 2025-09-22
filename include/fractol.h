@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/22 14:02:29 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/22 14:42:02 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ typedef struct s_fractal
 	void	*mlx_win;
 	t_img	img;
 }	t_fractal;
+
+void	fractal_init(t_fractal *fractal);
 #endif
