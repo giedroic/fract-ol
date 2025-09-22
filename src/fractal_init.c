@@ -6,13 +6,13 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/22 14:48:36 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/22 15:18:29 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void malloc_error(void);
+static void	malloc_error(void);
 
 void	fractal_init(t_fractal *fractal)
 {
@@ -41,7 +41,7 @@ void	fractal_init(t_fractal *fractal)
 			&fractal->img.line_len, &fractal->img.endian);
 }
 
-static void malloc_error(void)
+static void	malloc_error(void)
 {
 	perror("malloc error");
 	exit(EXIT_FAILURE);
