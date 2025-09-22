@@ -17,7 +17,7 @@ MAIN_SRC = main.c
 UTILS_SRC = fractal_init.c
 
 UTILS_OBJ = $(addprefix obj/, $(UTILS_SRC:%.c=%.o))
-MAIN_OBJ = $(addprefix obj/, $(MAIN_SRC:%.c=%.o)) $(UTILS_OBJ)
+MAIN_OBJ = $(addprefix obj/, $(MAIN_SRC:%.c=%.o))
 
 INCLUDE = include/fractol.h
 
@@ -25,8 +25,8 @@ INCLUDE = include/fractol.h
 
 all : libft minilibx-linux $(OBJ_DIR) $(BIN_DIR) $(NAME)
 
-bin/main: $(MAIN_OBJ)
-	$(CC) $(MAIN_OBJ) $(LDFLAGS) -o $@ $(LDLIBS)
+bin/main: $(MAIN_OBJ) $(UTILS_OBJ)
+	$(CC) $< $(UTILS_OBJ) $(LDFLAGS) -o $@ $(LDLIBS)
 
 obj/%.o : src/%.c $(INCLUDE)
 	$(CC) $(CFLAGS) -c $< -o $@
