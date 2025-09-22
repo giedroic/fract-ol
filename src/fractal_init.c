@@ -6,11 +6,11 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/22 14:39:28 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/22 14:48:36 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "fractol.h"
 
 static void malloc_error(void);
 
@@ -21,7 +21,7 @@ void	fractal_init(t_fractal *fractal)
 	{
 		malloc_error();
 	}
-	fractal->mlx_win = mlx_new_windows(fractal->mlx, WIDTH, HEIGHT,
+	fractal->mlx_win = mlx_new_window(fractal->mlx, WIDTH, HEIGHT,
 			fractal->name);
 	if (fractal->mlx_win == NULL)
 	{
@@ -38,7 +38,7 @@ void	fractal_init(t_fractal *fractal)
 		malloc_error();
 	}
 	fractal->img.addr = mlx_get_data_addr(fractal->img.img, &fractal->img.bpp,
-			&fractal->img.size_len, &fractal->endian);
+			&fractal->img.line_len, &fractal->img.endian);
 }
 
 static void malloc_error(void)
