@@ -14,7 +14,7 @@ BIN_DIR = bin/
 OBJ_DIR = obj/
 
 MAIN_SRC = main.c
-UTILS_SRC = fractal_init.c
+UTILS_SRC = fractal_init.c fractal_render.c math_utils.c
 
 UTILS_OBJ = $(addprefix obj/, $(UTILS_SRC:%.c=%.o))
 MAIN_OBJ = $(addprefix obj/, $(MAIN_SRC:%.c=%.o))
