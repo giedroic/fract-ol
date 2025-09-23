@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 19:40:22 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:41:06 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 		if (sqrt(pow(z.re, 2) + pow(z.im, 2)) > fractol->escape_radius)
 		{
 			color = map(i, BLACK, WHITE, fractal->iterations);
+			ft_mlx_pixel_put(fractal->img, x, y, color);
 			return ;
 		}
 	}
