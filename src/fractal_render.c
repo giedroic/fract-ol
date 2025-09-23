@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 20:08:58 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 20:12:44 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	fractal_render(t_fractal *fractal)
 			handle_pixel(x, y, fractal);
 		}
 	}
-	mlx_put_image_to_window(fractal->mlx, fractal->mlx_win, fractal->img.img, 0, 0);
+	mlx_put_image_to_window(fractal->mlx, fractal->mlx_win, &fractal->img, 0, 0);
 }
 
 static void	handle_pixel(int x, int y, t_fractal *fractal)
@@ -52,7 +52,7 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 		if (sqrt(pow(z.re, 2) + pow(z.im, 2)) > fractal->escape_radius)
 		{
 			color = map(i, BLACK, WHITE, fractal->iterations);
-			ft_mlx_pixel_put(fractal->img.img, x, y, color);
+			ft_mlx_pixel_put(&fractal->img, x, y, color);
 			return ;
 		}
 		++i;
