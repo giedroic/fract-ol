@@ -7,7 +7,7 @@ LDLIBS = -l ft -l mlx -l Xext -l X11 -l m -l z
 MKDIR = mkdir -p
 RMDIR = rm -rf
 
-NAME = main
+NAME = fractol
 NAME := $(addprefix bin/,$(NAME))
 
 BIN_DIR = bin/
@@ -25,7 +25,7 @@ INCLUDE = include/fractol.h
 
 all : libft minilibx-linux $(OBJ_DIR) $(BIN_DIR) $(NAME)
 
-bin/main: $(MAIN_OBJ) $(UTILS_OBJ)
+bin/fractol: $(MAIN_OBJ) $(UTILS_OBJ)
 	$(CC) $< $(UTILS_OBJ) $(LDFLAGS) -o $@ $(LDLIBS)
 
 obj/%.o : src/%.c $(INCLUDE)
