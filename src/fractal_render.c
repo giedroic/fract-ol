@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 19:54:30 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:59:48 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,34 +37,33 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 {
 	t_complex	z;
 	t_complex	c;
-	double		tmp_re;
 	int			color;
 	int			i;
 
 	z.re = 0.0;
 	z.im = 0.0;
-	c.re = (x, 2, -2, WIDTH);
-	c.im = (y, 2, -2, HEIGHT);
+	c.re = map(x, 2, -2, WIDTH);
+	c.im = map(y, 2, -2, HEIGHT);
 	i = 0;
 	while (i < fractal->iterations)
 	{
 		z = sum_complex(square_complex(z), c);
-		if (sqrt(pow(z.re, 2) + pow(z.im, 2)) > fractol->escape_radius)
+		if (sqrt(pow(z.re, 2) + pow(z.im, 2)) > fractal->escape_radius)
 		{
 			color = map(i, BLACK, WHITE, fractal->iterations);
-			ft_mlx_pixel_put(fractal->img, x, y, color);
+			ft_mlx_pixel_put(fractal->img.img, x, y, color);
 			return ;
 		}
 		++i;
 	}
-	ft_mlx_pixel_put(fractal->img, x, y, ACID_GREEN);
+	ft_mlx_pixel_put(fractal->img.img, x, y, ACID_GREEN);
 }
 
 static void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = data->addr + (y * data->line_length + x * (data->bpp / 8));
+	dst = data->addr + (y * data->line_len + x * (data->bpp / 8));
 	*(unsigned int *) dst = color;
 }
 
