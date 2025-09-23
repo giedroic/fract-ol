@@ -6,17 +6,13 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 21:36:39 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/22 21:41:53 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 18:50:43 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-t_complex	map(double x, double y, double width, double height)
+double	map(double n, double new_min, double new_max, double max)
 {
-	t_complex	c;
-
-	c.re = -2 + (4.0 * x) / (width - 1);
-	c.im = 2 + (4.0 * y) / (height - 1);
-	return (c);
+	return (new_min + (x - 0) / (max - 0) * (new_max - new_min));
 }
