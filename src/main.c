@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:28:04 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 20:06:41 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 20:07:26 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char *argv[])
 	{
 		fractal_init(&fractal);
 		fractal_render(&fractal);
+		mlx_loop(fractal.mlx);
 	}
 	else
 	{
