@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 19:58:03 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 21:49:20 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 # define ERROR_MESSAGE "Usage: \"./fractol mandelbrot\" or \
 \"./fractol julia <Re> <Im>\"\n"
-# define WIDTH 1000
-# define HEIGHT 1000
+# define WIDTH 1920
+# define HEIGHT 1080
 # define BLACK	0x000000
 # define WHITE	0xFFFFFF
 # define RED	0xFF0000
