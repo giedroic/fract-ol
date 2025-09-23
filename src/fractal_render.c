@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 20:12:44 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 21:45:13 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ void	fractal_render(t_fractal *fractal)
 		while (x < WIDTH)
 		{
 			handle_pixel(x, y, fractal);
+			++x;
 		}
+		++y;
 	}
-	mlx_put_image_to_window(fractal->mlx, fractal->mlx_win, &fractal->img, 0, 0);
+	mlx_put_image_to_window(fractal->mlx, fractal->mlx_win, fractal->img.img, 0, 0);
 }
 
 static void	handle_pixel(int x, int y, t_fractal *fractal)
@@ -57,7 +59,7 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 		}
 		++i;
 	}
-	ft_mlx_pixel_put(fractal->img.img, x, y, ACID_GREEN);
+	ft_mlx_pixel_put(&fractal->img, x, y, ACID_GREEN);
 }
 
 static void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
@@ -70,7 +72,7 @@ static void	ft_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 static t_complex	square_complex(t_complex z)
 {
-	int	tmp_re;
+	double	tmp_re;
 
 	tmp_re = pow(z.re, 2) - pow(z.im, 2);
 	z.im = 2 * z.re * z.im;
