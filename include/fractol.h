@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/22 22:09:44 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:13:27 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 \"./fractol julia <Re> <Im>\"\n"
 # define WIDTH 1000
 # define HEIGHT 1000
+# define BLACK	0x000000
+# define WHITE	0xFFFFFF
+# define RED	0xFF0000
+# define GREEN	0x00FF00
+# define BLUE	0x0000FF
 
 typedef struct s_data
 {
@@ -40,7 +45,7 @@ typedef struct s_fractal
 	void	*mlx_win;
 	t_data	img;
 	double	escape_radius;
-	int	iterations;
+	int		iterations;
 }	t_fractal;
 
 typedef struct s_complex
@@ -49,7 +54,7 @@ typedef struct s_complex
 	double	im;
 }	t_complex;
 
-void	fractal_init(t_fractal *fractal);
-void	fractal_render(t_fractal *fractal);
+void		fractal_init(t_fractal *fractal);
+void		fractal_render(t_fractal *fractal);
 t_complex	map(double x, double y, double width, double height);
 #endif
