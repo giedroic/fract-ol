@@ -6,14 +6,14 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 18:28:24 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:15:32 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 static void	malloc_error(void);
-void	data_init(t_fractal *fractal);
+static void	data_init(t_fractal *fractal);
 
 void	fractal_init(t_fractal *fractal)
 {
@@ -47,7 +47,7 @@ static void	malloc_error(void)
 	exit(EXIT_FAILURE);
 }
 
-void	data_init(t_fractal *fractal)
+static void	data_init(t_fractal *fractal)
 {
 	fractal->escape_radius = 2;
 	fractal->iterations = 42;
