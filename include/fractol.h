@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 19:13:27 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 19:58:03 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define RED	0xFF0000
 # define GREEN	0x00FF00
 # define BLUE	0x0000FF
+# define ACID_GREEN	0x39FF14
 
 typedef struct s_data
 {
@@ -54,7 +55,7 @@ typedef struct s_complex
 	double	im;
 }	t_complex;
 
-void		fractal_init(t_fractal *fractal);
-void		fractal_render(t_fractal *fractal);
-t_complex	map(double x, double y, double width, double height);
+void	fractal_init(t_fractal *fractal);
+void	fractal_render(t_fractal *fractal);
+double	map(double x, double y, double width, double height);
 #endif
