@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:28:04 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/22 14:55:31 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 20:06:41 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int argc, char *argv[])
 		|| (argc == 4 && !ft_strncmp(argv[1], "julia", 5)))
 	{
 		fractal_init(&fractal);
+		fractal_render(&fractal);
 	}
 	else
 	{
