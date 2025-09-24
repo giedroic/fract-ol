@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:16:34 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 17:48:42 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 18:54:17 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	key_handler(int keysym, t_fractal *fractal)
 	if (keysym == XK_Escape)
 		close_handler(fractal);
 	else if (keysym == XK_Left)
-		fractal->re_shift += 0.1;
-	else if (keysym == XK_Right)
 		fractal->re_shift -= 0.1;
+	else if (keysym == XK_Right)
+		fractal->re_shift += 0.1;
 	else if (keysym == XK_Up)
-		fractal->im_shift -= 0.1;
-	else if (keysym == XK_Down)
 		fractal->im_shift += 0.1;
+	else if (keysym == XK_Down)
+		fractal->im_shift -= 0.1;
 	else if (keysym == XK_equal)
 		fractal->iterations += 1;
 	else if (keysym == XK_minus)
@@ -47,6 +47,14 @@ int	key_handler(int keysym, t_fractal *fractal)
 int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
 	printf("x:%d y:%d button:%d\n", x, y, button);
+	if (button == Button5)
+	{
+		fractal->zoom *= 0.95;
+	}
+	else if (button == 4)
+	{
+		fractal->zoom *= 1.05;
+	}
 	fractal_render(fractal);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 16:46:02 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 18:58:16 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 
 	z.re = 0.0;
 	z.im = 0.0;
-	c.re = map(x, -2, 2, WIDTH) + fractal->re_shift;
-	c.im = map(y, 2, -2, HEIGHT) + fractal->im_shift;
+	c.re = (map(x, -2, 2, WIDTH) + fractal->re_shift) * fractal->zoom;
+	c.im = (map(y, 2, -2, HEIGHT) + fractal->im_shift) * fractal->zoom;
 	i = 0;
 	while (i < fractal->iterations)
 	{
