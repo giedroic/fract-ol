@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 21:45:54 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 16:14:40 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	fractal_render(t_fractal *fractal)
 		}
 		++y;
 	}
-	mlx_put_image_to_window(fractal->mlx, fractal->mlx_win, fractal->img.img, 0, 0);
+	mlx_put_image_to_window(fractal->mlx,
+		fractal->mlx_win, fractal->img.img, 0, 0);
 }
 
 static void	handle_pixel(int x, int y, t_fractal *fractal)
