@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 16:24:17 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 16:45:28 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ typedef struct s_fractal
 	t_data	img;
 	double	escape_radius;
 	int		iterations;
+	double	re_shift;
+	double	im_shift;
 }	t_fractal;
 
 typedef struct s_complex
