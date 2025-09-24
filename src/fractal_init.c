@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 17:49:14 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 18:43:30 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ static void	data_init(t_fractal *fractal)
 	fractal->iterations = 42;
 	fractal->re_shift = 0.0;
 	fractal->im_shift = 0.0;
+	fractal->zoom = 0.0;
 }
 
 static void	events_init(t_fractal *fractal)
