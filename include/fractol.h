@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 21:49:20 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 16:24:17 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 # include <math.h>
 # include "libft.h"
 # include "mlx.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 
 # define ERROR_MESSAGE "Usage: \"./fractol mandelbrot\" or \
 \"./fractol julia <Re> <Im>\"\n"
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 800
+# define HEIGHT 800
 # define BLACK	0x000000
 # define WHITE	0xFFFFFF
 # define RED	0xFF0000
@@ -58,4 +60,5 @@ typedef struct s_complex
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 double	map(double x, double y, double width, double height);
+int	key_handler(int keysym, t_fractal *fractal);
 #endif
