@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:16:34 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 19:36:46 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 21:48:21 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,25 @@ int	key_handler(int keysym, t_fractal *fractal)
 
 int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
+	double	mouse_re;
+	double	mouse_im;
+	double	zoom_factor;
+
+	mouse_re = (map(x, -2, 2, WIDTH) * fractal->zoom) + fractal->re_shift;
+	mouse_im = (map(y, 2, -2, HEIGHT) * fractal->zoom) + fractal->im_shift;
 	if (button == Button5)
 	{
-		fractal->zoom *= 0.95;
+		zoom_factor = 0.95;
 	}
 	else if (button == 4)
 	{
-		fractal->zoom *= 1.05;
+		zoom_factor = 1.05;
 	}
+	else
+		return (0);
+	fractal->zoom *= zoom_factor;
+	fractal->re_shift = mouse_re - (mouse_re - fractal->re_shift) * zoom_factor;
+	fractal->im_shift = mouse_im - (mouse_im - fractal->im_shift) * zoom_factor;
 	fractal_render(fractal);
 	return (0);
 }
