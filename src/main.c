@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:28:04 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/23 20:07:26 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/23 20:31:05 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char *argv[])
 	if ((argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10))
 		|| (argc == 4 && !ft_strncmp(argv[1], "julia", 5)))
 	{
+		fractal.name = argv[1];
 		fractal_init(&fractal);
 		fractal_render(&fractal);
 		mlx_loop(fractal.mlx);
