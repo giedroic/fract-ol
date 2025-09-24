@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:16:34 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 17:22:58 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 17:48:42 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,26 @@ int	key_handler(int keysym, t_fractal *fractal)
 		fractal->im_shift -= 0.1;
 	else if (keysym == XK_Down)
 		fractal->im_shift += 0.1;
-	else if (keysym == XK_plus)
-		fractal->iterations *= 2;
+	else if (keysym == XK_equal)
+		fractal->iterations += 1;
 	else if (keysym == XK_minus)
 	{
 		if (fractal->iterations > 1)
-			fractal->iterations /= 2;	
+			fractal->iterations -= 1;
 	}
+	fractal_render(fractal);
+	return (0);
+}
+
+int	mouse_handler(int button, int x, int y, t_fractal *fractal)
+{
+	printf("x:%d y:%d button:%d\n", x, y, button);
+	fractal_render(fractal);
+	return (0);
+}
+
+int	render_handler(t_fractal *fractal)
+{
 	fractal_render(fractal);
 	return (0);
 }
