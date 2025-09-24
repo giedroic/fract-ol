@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 17:02:05 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/09/24 17:23:30 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ static void	events_init(t_fractal *fractal)
 	mlx_hook(fractal->mlx_win, KeyPress, KeyPressMask, key_handler, fractal);
 //	mlx_hook(fractal->mlx_win, ButtonPress, ButtonPressMask,
 //		mouse_handler, fractal);
-//	mlx_hook(fractal->mlx_win, DestroyNotify, StructureNotifyMask,
-//		close_handler, fractal);
+	mlx_hook(fractal->mlx_win, DestroyNotify, StructureNotifyMask,
+		close_handler, fractal);
 }
