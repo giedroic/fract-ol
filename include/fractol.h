@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/09/24 18:43:13 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/01 11:45:07 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,5 @@ int	key_handler(int keysym, t_fractal *fractal);
 int	close_handler(t_fractal *fractal);
 int	mouse_handler(int button, int x, int y, t_fractal *fractal);
 int	render_handler(t_fractal *fractal);
+double	ft_atod(const char *nptr);
 #endif
