@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:28:04 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/10/03 15:51:39 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:19:14 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int argc, char *argv[])
 			fractal.julia_re = ft_atod(argv[2]);
 			fractal.julia_im = ft_atod(argv[3]);
 		}
-		printf("re: %f im: %f\n", fractal.julia_re, fractal.julia_im);
 		fractal_init(&fractal);
 		fractal_render(&fractal);
 		mlx_loop(fractal.mlx);
