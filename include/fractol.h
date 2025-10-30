@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/10/01 11:49:26 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/30 20:25:24 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ typedef struct s_fractal
 	t_data	img;
 	double	escape_radius;
 	int		iterations;
-	double	re_shift;
-	double	im_shift;
-	double	zoom;
 	double	julia_re;
 	double	julia_im;
 }	t_fractal;
@@ -65,9 +62,9 @@ typedef struct s_complex
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 double	map(double x, double y, double width, double height);
-int	key_handler(int keysym, t_fractal *fractal);
-int	close_handler(t_fractal *fractal);
-int	mouse_handler(int button, int x, int y, t_fractal *fractal);
-int	render_handler(t_fractal *fractal);
+int		key_handler(int keysym, t_fractal *fractal);
+int		close_handler(t_fractal *fractal);
+int		mouse_handler(int button, int x, int y, t_fractal *fractal);
+int		render_handler(t_fractal *fractal);
 double	ft_atod(const char *nptr);
 #endif
