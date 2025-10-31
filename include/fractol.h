@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/10/31 19:09:09 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/31 19:20:21 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define WIDTH 800
 # define HEIGHT 800
 # define BLACK	0x000000
+# define WHITE  0xFFFFFF
 
 typedef struct s_data
 {
@@ -36,6 +37,12 @@ typedef struct s_data
 	int		endian;
 }	t_data;
 
+typedef struct s_complex
+{
+	double	re;
+	double	im;
+}	t_complex;
+
 typedef struct s_fractal
 {
 	char	*name;
@@ -44,15 +51,11 @@ typedef struct s_fractal
 	t_data	img;
 	double	escape_radius;
 	int		iterations;
+	t_complex z;
+	t_complex c;
 	double	julia_re;
 	double	julia_im;
 }	t_fractal;
-
-typedef struct s_complex
-{
-	double	re;
-	double	im;
-}	t_complex;
 
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
@@ -62,5 +65,5 @@ int		close_handler(t_fractal *fractal);
 int		mouse_handler(int button, int x, int y, t_fractal *fractal);
 int		render_handler(t_fractal *fractal);
 double	ft_atod(const char *nptr);
-void	init_complex(int x, int y, t_fractal *fractal, t_complex *z, t_complex *c);
+void	init_complex(int x, int y, t_fractal *fractal);
 #endif
