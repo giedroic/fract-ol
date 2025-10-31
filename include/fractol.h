@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/10/31 18:59:46 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/31 19:09:09 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@
 # define WIDTH 800
 # define HEIGHT 800
 # define BLACK	0x000000
-# define WHITE	0xFFFFFF
-# define RED	0xFF0000
-# define GREEN	0x00FF00
-# define BLUE	0x0000FF
-# define ACID_GREEN	0x39FF14
 
 typedef struct s_data
 {
