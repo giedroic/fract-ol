@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/10/30 20:25:24 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/31 18:59:46 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,5 @@ int		close_handler(t_fractal *fractal);
 int		mouse_handler(int button, int x, int y, t_fractal *fractal);
 int		render_handler(t_fractal *fractal);
 double	ft_atod(const char *nptr);
+void	init_complex(int x, int y, t_fractal *fractal, t_complex *z, t_complex *c);
 #endif

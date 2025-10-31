@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/10/30 20:21:32 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/31 18:59:40 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,24 @@
 static void	malloc_error(void);
 static void	data_init(t_fractal *fractal);
 static void	events_init(t_fractal *fractal);
+
+void	init_complex(int x, int y, t_fractal *fractal, t_complex *z, t_complex *c)
+{
+	if (!ft_strncmp(fractal->name, "julia", 5))
+	{
+		z->re = map(x, -2, 2, WIDTH);
+		z->im = map(y, 2, -2, HEIGHT);
+		c->re = fractal->julia_re;
+		c->im = fractal->julia_im;
+	}
+	else
+	{
+		z->re = 0.0;
+		z->im = 0.0;
+		c->im = map(x, -2, 2, WIDTH);
+		c->im = map(y, 2, -2, HEIGHT);
+	}
+}
 
 void	fractal_init(t_fractal *fractal)
 {
