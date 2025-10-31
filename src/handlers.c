@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:16:34 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/10/30 20:34:57 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/10/31 18:37:44 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ int	key_handler(int keysym, t_fractal *fractal)
 
 int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
+	(void) button;
+	(void) x;
+	(void) y;
 	fractal_render(fractal);
 	return (0);
 }
