@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:28:04 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/03 18:29:23 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/03 19:06:29 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd(ERROR_MESSAGE, STDERR_FILENO);
 		exit(EXIT_FAILURE);
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
