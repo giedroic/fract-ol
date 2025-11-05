@@ -28,7 +28,7 @@ int mouse_handler(int button, int x, int y, t_fractal *fractal)
         zoom_factor = 0.9;
         fractal->iterations += 2;
     }
-    else if (fractal->iterations > 20)
+    else if (fractal->iterations > ITERATIONS)
     {
         zoom_factor = 1.10;
         fractal->iterations -= 1;

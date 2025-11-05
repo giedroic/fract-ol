@@ -70,7 +70,7 @@ static void	malloc_error(void)
 static void	data_init(t_fractal *fractal)
 {
 	fractal->escape_radius = 2;
-	fractal->iterations = 42;
+	fractal->iterations = ITERATIONS;
     fractal->re_min = -2.0;
     fractal->re_max = 2.0;
     fractal->im_min = -2.0;
