@@ -46,13 +46,11 @@ $(BIN_DIR) :
 clean :
 	$(MAKE) -C minilibx-linux clean
 	$(MAKE) -C libft clean
-	$(RM) $(POLLOCK_OBJ)
 	$(RMDIR) $(OBJ_DIR)
 
 fclean :
 	$(MAKE) -C minilibx-linux clean
 	$(MAKE) -C libft fclean
-	$(RM) $(POLLOCK_OBJ) $(NAME)
 	$(RMDIR) $(OBJ_DIR) $(BIN_DIR)
 
 re : fclean all
