@@ -18,6 +18,7 @@ int mouse_handler(int button, int x, int y, t_fractal *fractal)
     double mouse_im;
     double zoom_factor;
     
+    zoom_factor = 1;
     if (button != SCROLL_UP && button != SCROLL_DOWN)
         return (0);
     mouse_re = map(x, fractal->re_min, fractal->re_max, WIDTH);
@@ -27,11 +28,10 @@ int mouse_handler(int button, int x, int y, t_fractal *fractal)
         zoom_factor = 0.9;
         fractal->iterations += 2;
     }
-    else
+    else if (fractal->iterations > 20)
     {
         zoom_factor = 1.10;
-        if (fractal->iterations > 20)
-            fractal->iterations -= 2;
+        fractal->iterations -= 1;
     }
     fractal->re_min = mouse_re + (fractal->re_min - mouse_re) * zoom_factor;
     fractal->re_max = mouse_re + (fractal->re_max - mouse_re) * zoom_factor;
