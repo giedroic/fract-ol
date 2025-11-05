@@ -82,4 +82,5 @@ static void	events_init(t_fractal *fractal)
 	mlx_hook(fractal->mlx_win, DestroyNotify, StructureNotifyMask,
 		close_handler, fractal);
 	mlx_hook(fractal->mlx_win, Expose, ExposureMask, render_handler, fractal);
+    mlx_mouse_hook(fractal->mlx_win, mouse_handler, fractal);
 }
