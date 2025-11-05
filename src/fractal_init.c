@@ -20,8 +20,8 @@ void	init_complex(int x, int y, t_fractal *fractal)
 {
 	if (!ft_strncmp(fractal->name, "julia", 5))
 	{
-		fractal->z.re = map(x, -2, 2, WIDTH);
-		fractal->z.im = map(y, 2, -2, HEIGHT);
+		fractal->z.re = map(x, fractal->re_min, fractal->re_max, WIDTH);
+		fractal->z.im = map(y, fractal->im_max, fractal->im_min, HEIGHT);
 		fractal->c.re = fractal->julia_re;
 		fractal->c.im = fractal->julia_im;
 	}
@@ -29,8 +29,8 @@ void	init_complex(int x, int y, t_fractal *fractal)
 	{
 		fractal->z.re = 0.0;
 		fractal->z.im = 0.0;
-		fractal->c.re = map(x, -2, 2, WIDTH);
-		fractal->c.im = map(y, 2, -2, HEIGHT);
+		fractal->c.re = map(x, fractal->im_min, fractal->im_max, WIDTH);
+		fractal->c.im = map(y, fractal->im_max, fractal->im_min, HEIGHT);
 	}
 }
 
