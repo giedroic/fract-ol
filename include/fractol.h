@@ -27,6 +27,8 @@
 # define HEIGHT 800
 # define BLACK	0x000000
 # define WHITE  0xFFFFFF
+# define SCROLL_UP 4
+# define SCROLL_DOWN 5
 
 typedef struct s_data
 {
