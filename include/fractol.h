@@ -55,6 +55,10 @@ typedef struct s_fractal
 	t_complex c;
 	double	julia_re;
 	double	julia_im;
+    double re_min;
+    double re_max;
+    double im_min;
+    double im_max;
 }	t_fractal;
 
 void	fractal_init(t_fractal *fractal);
