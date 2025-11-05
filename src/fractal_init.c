@@ -29,7 +29,7 @@ void	init_complex(int x, int y, t_fractal *fractal)
 	{
 		fractal->z.re = 0.0;
 		fractal->z.im = 0.0;
-		fractal->c.re = map(x, fractal->im_min, fractal->im_max, WIDTH);
+		fractal->c.re = map(x, fractal->re_min, fractal->re_max, WIDTH);
 		fractal->c.im = map(y, fractal->im_max, fractal->im_min, HEIGHT);
 	}
 }
