@@ -29,7 +29,7 @@
 # define WHITE  0xFFFFFF
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
-# define ITERATIONS 20
+# define ITERATIONS 15
 
 typedef struct s_data
 {
