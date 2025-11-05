@@ -12,6 +12,35 @@
 
 #include "fractol.h"
 
+int mouse_handler(int button, int x, int y, t_fractal *fractal)
+{
+    double mouse_re;
+    double mouse_im;
+    double zoom_factor;
+    
+    if (button != SCROLL_UP && button != SCROLL_DOWN)
+        return (0);
+    mouse_re = map(x, fractal->re_min, fractal->re_max, WIDTH);
+    mouse_im = map(y, fractal->im_max, fractal->im_min, HEIGHT);
+    if (button == SCROLL_UP)
+    {
+        zoom_factor = 0.9;
+        fractal->iterations += 2;
+    }
+    else
+    {
+        zoom_factor = 1.10;
+        if (fractal->iterations > 20)
+            fractal->iterations -= 2;
+    }
+    fractal->re_min = mouse_re + (fractal->re_min - mouse_re) * zoom_factor;
+    fractal->re_max = mouse_re + (fractal->re_max - mouse_re) * zoom_factor;
+    fractal->im_min = mouse_im + (fractal->im_min - mouse_im) * zoom_factor;
+    fractal->im_max = mouse_im + (fractal->im_max - mouse_im) * zoom_factor;
+    fractal_render(fractal);
+    return (0);
+}
+
 int	close_handler(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx, fractal->img.img);

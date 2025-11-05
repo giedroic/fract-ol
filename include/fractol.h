@@ -66,6 +66,7 @@ typedef struct s_fractal
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 double	map(double x, double y, double width, double height);
+int mouse_handler(int button, int x, int y, t_fractal *fractal);
 int		close_handler(t_fractal *fractal);
 int		render_handler(t_fractal *fractal);
 double	ft_atod(const char *nptr);
