@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:16:34 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/12 19:02:39 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/12 19:09:03 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,9 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 	mouse_re = map(x, fractal->re_min, fractal->re_max, WIDTH);
 	mouse_im = map(y, fractal->im_max, fractal->im_min, HEIGHT);
 	if (button == SCROLL_UP)
-	{
 		zoom_factor = 0.9;
-		fractal->iterations += 2;
-	}
 	else if (fractal->iterations > ITERATIONS)
-	{
 		zoom_factor = 1.10;
-		fractal->iterations -= 1;
-	}
 	fractal->re_min = mouse_re + (fractal->re_min - mouse_re) * zoom_factor;
 	fractal->re_max = mouse_re + (fractal->re_max - mouse_re) * zoom_factor;
 	fractal->im_min = mouse_im + (fractal->im_min - mouse_im) * zoom_factor;
