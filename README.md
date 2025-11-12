@@ -1,84 +1,89 @@
-Fractol
+# fract'ol
 
-fract-ol is a 42 school project that renders the Mandelbrot and Julia fractal sets in C using the MiniLibX graphics library.
+**fract‑ol** is a graphical program written in C that allows users to explore and visualize mathematical fractals such as the Mandelbrot and Julia sets.  
+It uses the **MiniLibX** library for rendering and supports real‑time zooming and interaction.
 
-![Screenshot of Mandelbrot and Julia fractals]
-(You can add a screenshot of your program in action here)
+---
 
-Features
+## Overview
 
-Mandelbrot Set: Renders the classic Mandelbrot set.
+Fractals are mathematical sets that exhibit a repeating pattern at every scale.  
+This project provides an intuitive interface for visualizing these complex shapes, highlighting the beauty of mathematics through graphical computation.
 
-Julia Set: Renders the Julia set with customizable real and imaginary parameters.
+---
 
-Dynamic Zoom: Zoom in and out of the fractal using the mouse scroll wheel.
+## Features
 
-Cursor-Focused Zoom: The zoom functionality is centered on the current position of the mouse cursor, allowing for easy exploration.
+- Interactive rendering of **Mandelbrot** and **Julia** fractals  
+- Real‑time **zooming** using the mouse scroll wheel  
+- Smooth **color gradients** based on iteration counts  
+- **Configurable Julia constants** via command‑line arguments  
+- Lightweight C implementation using **MiniLibX** and **libft**  
 
-Dynamic Iterations: The number of iterations increases as you zoom in to reveal more detail.
+---
 
-Smooth Coloring: A simple black-to-white gradient is used to visualize the escape time of each point.
+## Requirements
 
-Prerequisites (Linux)
+This program is intended for **Linux** systems. The following packages are required:
 
-This project is built for Linux and relies on the X11 libraries and libbsd. You can install the necessary dependencies on a Debian-based system (like Ubuntu) using:
-
+```bash
 sudo apt-get install gcc make xorg libxext-dev libbsd-dev
+```
 
+---
 
-(This requirement is noted in the minilibx-linux/README.md file)
+## Installation
 
-Building the Project
+Clone the repository and build the project using the provided `Makefile`:
 
-The provided Makefile will build the libft library, the minilibx-linux library, and the main fractol executable.
-
-Clone the repository:
-
-git clone [https://github.com/your_username/your_repo_name.git](https://github.com/your_username/your_repo_name.git)
-cd your_repo_name
-
-
-Run make:
-
+```bash
+git clone https://github.com/giedroic/fract-ol.git
+cd fract-ol
 make
+```
 
+After compilation, the executable `fractol` will be available in the `bin/` directory.
 
-This will create the executable in the bin/ directory.
+---
 
-Usage
+## Usage
 
-The program accepts specific command-line arguments to select the fractal.
+Run the program with one of the available fractal options:
 
-Mandelbrot
-
+### Mandelbrot Set
+```bash
 ./bin/fractol mandelbrot
+```
 
+### Julia Set
+Provide the real and imaginary parts of the complex constant as arguments:
 
-Julia
-
-For the Julia set, you must provide two floating-point numbers representing the real (Re) and imaginary (Im) parts of the complex constant.
-
+```bash
 ./bin/fractol julia <Re> <Im>
+```
 
-
-Julia Set Examples:
-
-# A classic, swirling shape
+#### Example
+```bash
 ./bin/fractol julia -0.7 0.27015
+```
 
-# "The Rabbit"
-./bin/fractol julia -0.123 0.745
+If the arguments are incorrect or incomplete, the program will display a usage message.
 
-# Dendrite shape
-./bin/fractol julia 0.0 0.8
+---
 
+## Controls
 
-If you provide incorrect arguments, the program will print a usage message to the standard error output.
+| Action | Description |
+|--------|--------------|
+| Mouse Scroll Up | Zoom in |
+| Mouse Scroll Down | Zoom out |
+| Close Window | Exit program |
 
-Controls
+---
 
-Mouse Scroll Up (Wheel Up): Zoom in.
+## Notes
 
-Mouse Scroll Down (Wheel Down): Zoom out.
+- Performance depends on system capabilities and the zoom depth.  
+- Julia constants significantly affect the resulting shape — experiment with different values!  
 
-Close Window Button (Red 'X'): Shuts down the program and performs a clean exit.
+---
