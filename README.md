@@ -1,6 +1,6 @@
 # fract'ol
 
-**fract‑ol** is a graphical program written in C that allows users to explore and visualize mathematical fractals such as the Mandelbrot and Julia sets.  
+**fract'ol** is a graphical program written in C that allows users to explore and visualize mathematical fractals such as the Mandelbrot and Julia sets.  
 It uses the **MiniLibX** library for rendering and supports real‑time zooming and interaction.
 
 ---
