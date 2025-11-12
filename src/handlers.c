@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:16:34 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/12 19:09:03 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/12 20:00:13 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 	double	mouse_re;
 	double	mouse_im;
 	double	zoom_factor;
+	double	view_width;
 
 	zoom_factor = 1;
 	if (button != SCROLL_UP && button != SCROLL_DOWN)
@@ -31,6 +32,10 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 	fractal->re_max = mouse_re + (fractal->re_max - mouse_re) * zoom_factor;
 	fractal->im_min = mouse_im + (fractal->im_min - mouse_im) * zoom_factor;
 	fractal->im_max = mouse_im + (fractal->im_max - mouse_im) * zoom_factor;
+	view_width = fractal->re_max - fractal->re_min;
+	fractal->iterations = ITERATIONS + (int)(-log10(view_width / 4.0) * 5);
+	if (fractal->iterations < ITERATIONS)
+		fractal->iterations = ITERATIONS;
 	fractal_render(fractal);
 	return (0);
 }
