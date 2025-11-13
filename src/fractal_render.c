@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/12 18:59:51 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/13 08:28:46 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	fractal_render(t_fractal *fractal)
 	int	x;
 	int	y;
 
+	fractal->scale_re = (fractal->re_min - fractal->re_max) * WIDTH;
+	fractal->scale_im = (fractal->im_min - fractal->im_max) * HEIGHT;
 	y = 0;
 	while (y < HEIGHT)
 	{
