@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:19:32 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/13 08:37:16 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/13 08:49:32 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static t_complex	square_complex(t_complex z)
 {
 	double	tmp_re;
 
-	tmp_re = pow(z.re, 2) - pow(z.im, 2);
+	tmp_re = z.re * z.re - z.im * z.im;
 	z.im = 2 * z.re * z.im;
 	z.re = tmp_re;
 	return (z);
