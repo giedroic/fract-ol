@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/13 08:16:39 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/13 08:17:09 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ static void	data_init(t_fractal *fractal)
 {
 	fractal->escape_radius = 2;
 	fractal->iterations = ITERATIONS;
+	fractal->escape_radius_squared = escape_radius * escape_radius;
 	fractal->re_min = -2.0;
 	fractal->re_max = 2.0;
 	fractal->im_min = -2.0;
