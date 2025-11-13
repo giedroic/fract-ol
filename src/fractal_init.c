@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/12 18:58:38 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/13 08:16:39 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ static void	data_init(t_fractal *fractal)
 	fractal->re_max = 2.0;
 	fractal->im_min = -2.0;
 	fractal->im_max = 2.0;
+	fractal->scale_re = (re_min - re_max) * WIDTH;
+	fractal->scale_im = (im_min - im_max) * HEIGHT;
 }
 
 static void	events_init(t_fractal *fractal)
