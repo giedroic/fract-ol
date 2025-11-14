@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
+/*   By: agiedroi <agiedroi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/14 09:11:14 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/14 09:46:51 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define WHITE  0xFFFFFF
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
-# define ITERATIONS 25
+# define ITERATIONS 200
 
 typedef struct s_data
 {
@@ -48,30 +48,30 @@ typedef struct s_complex
 
 typedef struct s_fractal
 {
-	char	*name;
-	void	*mlx;
-	void	*mlx_win;
-	t_data	img;
-	double	escape_radius;
-	double	escape_radius_squared;
-	int		iterations;
-	t_complex z;
-	t_complex c;
-	double	julia_re;
-	double	julia_im;
-	double re_min;
-	double re_max;
-	double im_min;
-	double im_max;
-	double scale_re;
-	double scale_im;
+	char		*name;
+	void		*mlx;
+	void		*mlx_win;
+	t_data		img;
+	double		escape_radius;
+	double		escape_radius_squared;
+	int			iterations;
+	t_complex	z;
+	t_complex	c;
+	double		julia_re;
+	double		julia_im;
+	double		re_min;
+	double		re_max;
+	double		im_min;
+	double		im_max;
+	double		scale_re;
+	double		scale_im;
 }	t_fractal;
 
 void	fractal_init(t_fractal *fractal);
 void	fractal_render(t_fractal *fractal);
 double	map(double x, double y, double width, double height);
-int	key_handler(int keysym, t_fractal *fractal);
-int mouse_handler(int button, int x, int y, t_fractal *fractal);
+int		key_handler(int keysym, t_fractal *fractal);
+int		mouse_handler(int button, int x, int y, t_fractal *fractal);
 int		close_handler(t_fractal *fractal);
 int		render_handler(t_fractal *fractal);
 double	ft_atod(const char *nptr);
