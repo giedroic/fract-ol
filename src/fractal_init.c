@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:54:48 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/14 09:43:35 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/14 09:58:00 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	init_complex(int x, int y, t_fractal *fractal)
 {
 	if (!ft_strncmp(fractal->name, "julia", 5))
 	{
-		fractal->z.re = map(x, fractal->re_min, fractal->re_max, WIDTH);
-		fractal->z.im = map(y, fractal->im_max, fractal->im_min, HEIGHT);
+		fractal->z.re = fractal->re_min + x * fractal->scale_re;
+		fractal->z.im = fractal->im_max + y * fractal->scale_im;
 		fractal->c.re = fractal->julia_re;
 		fractal->c.im = fractal->julia_im;
 	}
@@ -29,8 +29,8 @@ void	init_complex(int x, int y, t_fractal *fractal)
 	{
 		fractal->z.re = 0.0;
 		fractal->z.im = 0.0;
-		fractal->c.re = map(x, fractal->re_min, fractal->re_max, WIDTH);
-		fractal->c.im = map(y, fractal->im_max, fractal->im_min, HEIGHT);
+		fractal->c.re = fractal->re_min + x * fractal->scale_re;
+		fractal->c.im = fractal->im_max + y * fractal->scale_im;
 	}
 }
 
