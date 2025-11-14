@@ -6,11 +6,18 @@
 /*   By: agiedroi <agiedroi@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:16:34 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/12 23:09:38 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/14 09:09:48 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+int	key_handler(int keysym, t_fractal *fractal)
+{
+	if (keysym == XK_Escape)
+		close_handler(fractal);
+	return (0);
+}
 
 int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
