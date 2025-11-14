@@ -6,7 +6,7 @@
 /*   By: agiedroi <agiedroi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 13:50:24 by agiedroi          #+#    #+#             */
-/*   Updated: 2025/11/14 09:46:51 by agiedroi         ###   ########.fr       */
+/*   Updated: 2025/11/14 09:50:24 by agiedroi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define WHITE  0xFFFFFF
 # define SCROLL_UP 4
 # define SCROLL_DOWN 5
-# define ITERATIONS 200
+# define ITERATIONS 42
 
 typedef struct s_data
 {
